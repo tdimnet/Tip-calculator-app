@@ -6,7 +6,8 @@
   "author": "Thomas Dimnet <thomas.dimnet@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "serve": "vite src"
+    "serve": "vite",
+    "css:watch": "npx tailwindcss -i ./src/main.css -o ./dist/main.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.3",
