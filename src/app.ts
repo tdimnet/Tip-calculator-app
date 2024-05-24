@@ -4,7 +4,8 @@ function onUpdateBill(billValue: string): void {
     const $totalPerPerson = document.querySelector('.total-per-person')
 
     if ($totalPerPerson) {
-        $totalPerPerson.textContent = "$" + billValue
+        billValue = billValue === "0" ? "0" : billValue
+        $totalPerPerson.textContent = "$" + Number(billValue).toFixed(2)
     } else {
         throw new Error("Can't find totalPerPeson DOM node")
     }
@@ -12,12 +13,12 @@ function onUpdateBill(billValue: string): void {
 
 
 function onUpdateTip(tipValue: string): void {
-
+    console.log("Let's update the tip", tipValue)
 }
 
 
 function onUpdateNumberOfPeople(numberOfPeopleValue: string): void {
-
+    console.log("Let's update the people", numberOfPeopleValue)
 }
 
 
@@ -28,9 +29,9 @@ $formTip?.addEventListener('input', function(e) {
     if (dataType === "bill") {
         onUpdateBill(targetElement.value)
     } else if (dataType === "tip") {
-        console.log("Let's update the tip")
+        onUpdateTip(targetElement.value)
     } else if (dataType === "people") {
-        console.log("Let's update the people")
+        onUpdateNumberOfPeople(targetElement.value)
     } else {
         throw new Error("Unknown data type")
     }
