@@ -1,9 +1,23 @@
 const $formTip = document.querySelector('.form-tip')
 
-function onUpdateBill() {
-    const billValue = (document.querySelector('#bill') as HTMLInputElement).value
+function onUpdateBill(billValue: string): void {
+    const $totalPerPerson = document.querySelector('.total-per-person')
 
-    console.log(billValue)
+    if ($totalPerPerson) {
+        $totalPerPerson.textContent = "$" + billValue
+    } else {
+        throw new Error("Can't find totalPerPeson DOM node")
+    }
+}
+
+
+function onUpdateTip(tipValue: string): void {
+
+}
+
+
+function onUpdateNumberOfPeople(numberOfPeopleValue: string): void {
+
 }
 
 
@@ -12,7 +26,7 @@ $formTip?.addEventListener('input', function(e) {
     const dataType = targetElement.getAttribute('data-type')
 
     if (dataType === "bill") {
-        onUpdateBill()
+        onUpdateBill(targetElement.value)
     } else if (dataType === "tip") {
         console.log("Let's update the tip")
     } else if (dataType === "people") {

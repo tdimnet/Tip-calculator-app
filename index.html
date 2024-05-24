@@ -46,7 +46,7 @@
       </fieldset>
       <fieldset class="mb-8">
         <label class="block mb-2" for="people">Number of people</label>
-        <input data-type="people" class="bg-cyan-50 w-full text-right py-2 px-4 rounded-md" id="people" name="people" type="number" step="1" min="0" max="999" placeholder="0">
+        <input data-type="people" class="bg-cyan-50 w-full text-right py-2 px-4 rounded-md" id="people" name="people" type="number" step="1" min="1" max="999" placeholder="1">
       </fieldset>
 
       <div class="bg-green-600 pt-9 px-6 pb-6">
@@ -56,15 +56,15 @@
             <br>
             <span>/ person</span>
           </p>
-          <p>$0.00</p>
+          <p class="tip-per-person">$0.00</p>
         </div>
-        <div class="total-per-person flex mb-8">
+        <div class="flex mb-8">
           <p>
             Total
             <br>
             <span>/ person</span>
           </p>
-          <p>$0.00</p>
+          <p class="total-per-person">$0.00</p>
         </div>
         <button type="reset">reset</button>
       </div>
