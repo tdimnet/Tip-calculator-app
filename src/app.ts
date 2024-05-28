@@ -22,6 +22,17 @@ function onUpdateNumberOfPeople(numberOfPeopleValue: string): void {
 }
 
 
+function onUpdateCustomType() {
+    const customType = document.querySelector('input[data-type="custom"]')
+
+    customType.setAttribute("type", "text")
+
+    console.log("======")
+    console.log(customType)
+    console.log("======")
+}
+
+
 $formTip?.addEventListener('input', function(e) {
     const targetElement = e.target as HTMLInputElement
     const dataType = targetElement.getAttribute('data-type')
@@ -32,6 +43,8 @@ $formTip?.addEventListener('input', function(e) {
         onUpdateTip(targetElement.value)
     } else if (dataType === "people") {
         onUpdateNumberOfPeople(targetElement.value)
+    } else if (dataType === "custom") {
+        onUpdateCustomType()
     } else {
         throw new Error("Unknown data type")
     }
