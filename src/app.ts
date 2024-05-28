@@ -1,11 +1,11 @@
 const $formTip = document.querySelector('.form-tip')
 
 function onUpdateBill(billValue: string): void {
-    const $totalPerPerson = document.querySelector('.total-per-person')
+    const $totalAmountPerPerson = document.querySelector('.total-per-person')
 
-    if ($totalPerPerson) {
+    if ($totalAmountPerPerson) {
         billValue = billValue === "0" ? "0" : billValue
-        $totalPerPerson.textContent = "$" + Number(billValue).toFixed(2)
+        $totalAmountPerPerson.textContent = "$" + Number(billValue).toFixed(2)
     } else {
         throw new Error("Can't find totalPerPeson DOM node")
     }
