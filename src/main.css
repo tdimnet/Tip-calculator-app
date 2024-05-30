@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .radio-btn {
+        @apply bg-very-dark-cyan text-white hover:bg-strong-cyan cursor-pointer w-fit py-1 px-8 rounded;
+    }
+}
