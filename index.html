@@ -1,75 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->  
-  <title>Tip calculator app</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <title>Tip calculator app</title>
 
-  <link rel="stylesheet" href="/dist/main.css">
-</head>
-<body>
-  <main class="bg-light-grayish-cyan pt-12">
-    <h1 class="flex justify-center mb-10">
-      <img src="./images/logo.svg" alt="Splitter">
-    </h1>
-    <form class="form-tip bg-white p-8 rounded-tl-3xl rounded-tr-3xl">
-      <fieldset class="mb-8">
-        <label class="block mb-2" for="bill">Bill</label>
-        <input data-type="bill" class="bg-very-light-grayish-cyan w-full text-right py-2 px-4 rounded-md [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" id="bill" name="bill" placeholder="142.55" bg-cyan-50 w-full" type="number">
-      </fieldset>
-      <fieldset class="mb-4">
-        <legend class="mb-4">Select Tip %</legend>
-        <div class="radio-btn">
-          <input class="appearance-none" checked data-type="tip" value="5" name="tip" id="5" type="radio">
-          <label for="5">5%</label>
-        </div>
-        <div class="radio-btn">
-          <input class="appearance-none" data-type="tip" value="10" name="tip" id="10" type="radio">
-          <label for="10">10%</label>
-        </div>
-        <div>
-          <input data-type="tip" value="15" name="tip" id="15" type="radio">
-          <label for="15">15%</label>
-        </div>
-        <div>
-          <input data-type="tip" value="20" name="tip" id="20" type="radio">
-          <label for="20">20%</label>
-        </div>
-        <div>
-          <input data-type="tip" value="50" name="tip" id="50" type="radio">
-          <label for="50">50%</label>
-        </div>
-        <div>
-          <input data-type="custom" value="custom" name="tip" id="custom" type="radio">
-          <label for="custom">Custom</label>
-        </div>
-      </fieldset>
-      <fieldset class="mb-8">
-        <label class="block mb-2" for="people">Number of people</label>
-        <input data-type="people" class="bg-cyan-50 w-full text-right py-2 px-4 rounded-md" id="people" name="people" type="number" step="1" min="1" max="999" placeholder="1" value="1">
-      </fieldset>
+    <link rel="stylesheet" href="/dist/main.css" />
+  </head>
+  <body>
+    <main class="bg-light-grayish-cyan pt-12">
+      <h1 class="flex justify-center mb-10">
+        <img src="./images/logo.svg" alt="Splitter" />
+      </h1>
+      <form class="form-tip bg-white p-8 rounded-tl-3xl rounded-tr-3xl">
+        <fieldset class="mb-8">
+          <label class="block mb-2" for="bill">Bill</label>
+          <input data-type="bill" class="bg-very-light-grayish-cyan w-full
+          text-right py-2 px-4 rounded-md [appearance:textfield]
+          [&::-webkit-outer-spin-button]:appearance-none
+          [&::-webkit-inner-spin-button]:appearance-none" id="bill" name="bill"
+          placeholder="142.55" bg-cyan-50 w-full" type="number">
+        </fieldset>
+        <fieldset class="mb-4">
+          <legend class="mb-4">Select Tip %</legend>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="radio-btn">
+              <input
+                checked
+                data-type="tip"
+                value="5"
+                name="tip"
+                id="5"
+                type="radio"
+              />
+              <label for="5">5%</label>
+            </div>
+            <div class="radio-btn">
+              <input
+                data-type="tip"
+                value="10"
+                name="tip"
+                id="10"
+                type="radio"
+              />
+              <label for="10">10%</label>
+            </div>
+            <div class="radio-btn">
+              <input
+                data-type="tip"
+                value="15"
+                name="tip"
+                id="15"
+                type="radio"
+              />
+              <label for="15">15%</label>
+            </div>
+            <div class="radio-btn">
+              <input
+                data-type="tip"
+                value="20"
+                name="tip"
+                id="20"
+                type="radio"
+              />
+              <label for="20">20%</label>
+            </div>
+            <div class="radio-btn">
+              <input
+                data-type="tip"
+                value="50"
+                name="tip"
+                id="50"
+                type="radio"
+              />
+              <label for="50">50%</label>
+            </div>
+            <div class="radio-btn">
+              <input
+                data-type="custom"
+                value="custom"
+                name="tip"
+                id="custom"
+                type="radio"
+              />
+              <label for="custom">Custom</label>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="mb-8">
+          <label class="block mb-2" for="people">Number of people</label>
+          <input
+            data-type="people"
+            class="bg-cyan-50 w-full text-right py-2 px-4 rounded-md"
+            id="people"
+            name="people"
+            type="number"
+            step="1"
+            min="1"
+            max="999"
+            placeholder="1"
+            value="1"
+          />
+        </fieldset>
 
-      <div class="bg-green-600 pt-9 px-6 pb-6">
-        <div class="flex">
-          <p>
-            Tip Amout
-            <br>
-            <span>/ person</span>
-          </p>
-          <p class="tip-per-person">$0.00</p>
+        <div class="bg-green-600 pt-9 px-6 pb-6">
+          <div class="flex">
+            <p>
+              Tip Amout
+              <br />
+              <span>/ person</span>
+            </p>
+            <p class="tip-per-person">$0.00</p>
+          </div>
+          <div class="flex mb-8">
+            <p>
+              Total
+              <br />
+              <span>/ person</span>
+            </p>
+            <p class="total-per-person">$0.00</p>
+          </div>
+          <button type="reset">reset</button>
         </div>
-        <div class="flex mb-8">
-          <p>
-            Total
-            <br>
-            <span>/ person</span>
-          </p>
-          <p class="total-per-person">$0.00</p>
-        </div>
-        <button type="reset">reset</button>
-      </div>
-    </form>
-  </main>
-  <script src="/dist/app.js"></script>
-</body>
+      </form>
+    </main>
+    <script src="/dist/app.js"></script>
+  </body>
 </html>
