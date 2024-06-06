@@ -6,5 +6,5 @@
         "target": "ES2015"
     },
     "include": ["./src/*.ts"],
-    "exclude": ["./ts/*.spec.ts"]
+    "exclude": ["./src/*.spec.ts"]
 }

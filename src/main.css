@@ -7,7 +7,11 @@
         @apply bg-very-dark-cyan text-white hover:bg-strong-cyan cursor-pointer rounded w-full text-center h-12 flex items-center justify-center;
 
         input {
-            @apply appearance-none;
+            /* @apply appearance-none; */
         }
+    }
+
+    .checked {
+        @apply bg-strong-cyan;
     }
 }

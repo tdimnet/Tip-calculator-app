@@ -1,6 +1,6 @@
 const $formTip = document.querySelector('.form-tip')
 
-function onUpdateBill(billValue: string): void {
+function handleBill(billValue: string): void {
     const $totalAmountPerPerson = document.querySelector('.total-per-person')
 
     if ($totalAmountPerPerson) {
@@ -11,13 +11,19 @@ function onUpdateBill(billValue: string): void {
     }
 }
 
-
-function onUpdateTip(tipValue: string): void {
-    console.log("Let's update the tip", tipValue)
+function handleRadioButtons(selectedRadio: Element) {
+    const radioButtons = document.querySelectorAll('.radio-btn')
+    radioButtons.forEach(radioBtn => radioBtn.classList.remove('checked'))
+    selectedRadio.parentElement.classList.add('checked')
 }
 
 
-function onUpdateNumberOfPeople(numberOfPeopleValue: string): void {
+function handleTip(tipElement: string): void {
+    console.log("Let's update the tip", tipElement)
+}
+
+
+function handlePeopleNumber(numberOfPeopleValue: string): void {
     console.log("Let's update the people", numberOfPeopleValue)
 }
 
@@ -38,11 +44,12 @@ $formTip?.addEventListener('input', function(e) {
     const dataType = targetElement.getAttribute('data-type')
 
     if (dataType === "bill") {
-        onUpdateBill(targetElement.value)
+        handleBill(targetElement.value)
     } else if (dataType === "tip") {
-        onUpdateTip(targetElement.value)
+        handleRadioButtons(targetElement)
+        handleTip(targetElement.value)
     } else if (dataType === "people") {
-        onUpdateNumberOfPeople(targetElement.value)
+        handlePeopleNumber(targetElement.value)
     } else if (dataType === "custom") {
         onUpdateCustomType()
     } else {
