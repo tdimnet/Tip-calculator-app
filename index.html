@@ -6,9 +6,12 @@
     <!-- displays site properly based on user's device -->
     <title>Tip calculator app</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/dist/main.css" />
   </head>
-  <body>
+  <body class="font-space-mono">
     <main class="bg-light-grayish-cyan pt-12">
       <h1 class="flex justify-center mb-10">
         <img src="./images/logo.svg" alt="Splitter" />
@@ -98,7 +101,7 @@
           </span>
           <input
             data-type="people"
-            class="bg-cyan-50 w-full text-right py-2 px-4 rounded-md [appearance:textfield]
+            class="bg-very-light-grayish-cyan w-full text-right py-2 px-4 rounded-md [appearance:textfield]
             [&::-webkit-outer-spin-button]:appearance-none
             [&::-webkit-inner-spin-button]:appearance-none"
             id="people"
