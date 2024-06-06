@@ -8,11 +8,13 @@
   "scripts": {
     "serve": "vite",
     "css:watch": "npx tailwindcss -i ./src/main.css -o ./dist/main.css --watch",
+    "test": "vitest",
     "ts:watch": "tsc --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5",
-    "vite": "^5.2.11"
+    "vite": "^5.2.11",
+    "vitest": "^1.6.0"
   }
 }
