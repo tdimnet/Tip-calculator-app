@@ -12,6 +12,13 @@ describe("handleFullBill Unit Test Suites", function() {
         expect(fullBill).toHaveProperty("tipAmountPerPerson")
         expect(fullBill).toHaveProperty("totalPerPerson")
     })
+
+    it("should return a tip amount per person of 10 and total per person of 110 for a bill of 100, a tip of 10% and 1 person", function() {
+        const fullBill = handleFullBill(100, 0.10, 1)
+
+        expect(fullBill.tipAmountPerPerson).toEqual(10)
+        expect(fullBill.totalPerPerson).toEqual(110)
+    })
 })
 
 
