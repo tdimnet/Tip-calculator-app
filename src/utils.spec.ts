@@ -26,6 +26,20 @@ describe("handleFullBill Unit Test Suites", function() {
         expect(fullBill.tipAmountPerPerson).toEqual(5)
         expect(fullBill.totalPerPerson).toEqual(55)
     })
+
+    it("should return a tip amount per person of 12.5 and total per person of 75 for a bill of 250, a tip of 20% and 4 person", function() {
+        const fullBill = handleFullBill(250, 0.20, 4)
+
+        expect(fullBill.tipAmountPerPerson).toEqual(12.5)
+        expect(fullBill.totalPerPerson).toEqual(75)
+    })
+
+    it("should catch an error when the bill, ", function() {
+        const fullBill = handleFullBill(250, 0.20, 4)
+
+        expect(fullBill.tipAmountPerPerson).toEqual(12.5)
+        expect(fullBill.totalPerPerson).toEqual(75)
+    })
 })
 
 
