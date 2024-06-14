@@ -34,11 +34,10 @@ describe("handleFullBill Unit Test Suites", function() {
         expect(fullBill.totalPerPerson).toEqual(75)
     })
 
-    it("should catch an error when the bill, ", function() {
-        const fullBill = handleFullBill(250, 0.20, 4)
-
-        expect(fullBill.tipAmountPerPerson).toEqual(12.5)
-        expect(fullBill.totalPerPerson).toEqual(75)
+    it("should catch an error when the bill, the tip and/or the number of people is less or equal to 0", function() {
+        expect(() => handleFullBill(0, 0.20, 4)).toThrowError("bill, tip, or numberOfPeople can no be equal or below 0")
+        expect(() => handleFullBill(250, 0, 4)).toThrowError("bill, tip, or numberOfPeople can no be equal or below 0")
+        expect(() => handleFullBill(250, 0.20, 0)).toThrowError("bill, tip, or numberOfPeople can no be equal or below 0")
     })
 })
 
