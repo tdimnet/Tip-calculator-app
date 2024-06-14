@@ -7,7 +7,15 @@
         @apply bg-very-dark-cyan text-white hover:bg-strong-cyan cursor-pointer rounded w-full text-center h-12 flex items-center justify-center;
 
         input {
-            /* @apply appearance-none; */
+            @apply appearance-none;
+        }
+
+        label {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 
