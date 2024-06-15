@@ -2,17 +2,6 @@ import handleFullBill from "./utils.js"
 
 const $formTip = document.querySelector('.form-tip')
 
-function handleBill(billValue: string): void {
-    const $totalAmountPerPerson = document.querySelector('.total-per-person')
-
-    if ($totalAmountPerPerson) {
-        billValue = billValue === "0" ? "0" : billValue
-        $totalAmountPerPerson.textContent = "$" + Number(billValue).toFixed(2)
-    } else {
-        throw new Error("Can't find totalPerPeson DOM node")
-    }
-}
-
 function handleRadioButtons(selectedRadio: Element) {
     const radioButtons = document.querySelectorAll('.radio-btn')
     radioButtons.forEach(radioBtn => radioBtn.classList.remove('checked'))
@@ -20,13 +9,9 @@ function handleRadioButtons(selectedRadio: Element) {
 }
 
 
-function handleTip(tipElement: string): void {
+function handleTip(tipElement: string): number {
     console.log("Let's update the tip", tipElement)
-}
-
-
-function handlePeopleNumber(numberOfPeopleValue: string): void {
-    console.log("Let's update the people", numberOfPeopleValue)
+    return Number(tipElement) / 100
 }
 
 
@@ -42,38 +27,28 @@ function onUpdateCustomType() {
 
 
 $formTip?.addEventListener('input', function(e) {
+    let tip = 0.05
+
     const targetElement = e.target as HTMLInputElement
     const dataType = targetElement.getAttribute('data-type')
 
-
-    if (dataType === "bill") {
-        handleBill(targetElement.value)
-    } else if (dataType === "tip") {
+    if (dataType === "tip") {
         handleRadioButtons(targetElement)
-        handleTip(targetElement.value)
-    } else if (dataType === "people") {
-        handlePeopleNumber(targetElement.value)
+        tip = handleTip(targetElement.value)
     } else if (dataType === "custom") {
         onUpdateCustomType()
-    } else {
-        throw new Error("Unknown data type")
     }
 
-    // Calcul tip amount and total per person
-    const bill = (document.querySelector('#bill') as HTMLInputElement).value
-    const numberOfPeople = (document.querySelector('#people') as HTMLInputElement).value
+    const bill = Number((document.querySelector('#bill') as HTMLInputElement).value)
+    const numberOfPeople = Number((document.querySelector('#people') as HTMLInputElement).value)
 
-    console.log(bill)
-    console.log(numberOfPeople)
 
-    const { totalPerPerson, tipAmountPerPerson } = handleFullBill(bill, 0.1, numberOfPeople)
-
-    console.log("+++++")
-    console.log(totalPerPerson)
-    console.log("+++++")
-    console.log("+++++")
-    console.log(tipAmountPerPerson)
-    console.log("+++++")
+    if (bill > 0 && numberOfPeople > 0) {
+        const { totalPerPerson, tipAmountPerPerson } = handleFullBill(bill, tip, numberOfPeople);
+        
+        (document.querySelector('.tip-per-person') as HTMLParagraphElement).textContent = tipAmountPerPerson.toFixed(2);
+        (document.querySelector('.total-per-person') as HTMLParagraphElement).textContent = totalPerPerson.toFixed(2)
+    }
 })
 
 function main(): void {
