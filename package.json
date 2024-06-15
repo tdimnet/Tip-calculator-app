@@ -8,8 +8,10 @@
   "scripts": {
     "serve": "vite",
     "css:watch": "npx tailwindcss -i ./src/main.css -o ./dist/main.css --watch",
+    "css:build": "npx tailwindcss -i ./src/main.css -o ./dist/main.css",
     "test": "vitest",
     "ts:watch": "tsc --watch",
+    "ts:build": "tsc",
     "format": "prettier . -w"
   },
   "devDependencies": {
