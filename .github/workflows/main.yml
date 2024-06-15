@@ -42,7 +42,7 @@ jobs:
         run: cp -R images dist/images
 
       - name: Copying index.html to dist folder
-        run: cp index-copy.html dist
+        run: cp index-copy.html dist/index.html
 
       - name: Setting up GH Pages
         uses: actions/configure-pages@v3
