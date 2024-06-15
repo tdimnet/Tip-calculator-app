@@ -1,10 +1,10 @@
 {
-    "compilerOptions": {
-        "noImplicitAny": true,
-        "removeComments": true,
-        "outDir": "./dist/",
-        "target": "ES2015"
-    },
-    "include": ["./src/*.ts"],
-    "exclude": ["./src/*.spec.ts"]
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "removeComments": true,
+    "outDir": "./dist/",
+    "target": "ES2015"
+  },
+  "include": ["./src/*.ts"],
+  "exclude": ["./src/*.spec.ts"]
 }

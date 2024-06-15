@@ -3,23 +3,23 @@
 @tailwind utilities;
 
 @layer components {
-    .radio-btn {
-        @apply bg-very-dark-cyan text-white hover:bg-strong-cyan cursor-pointer rounded w-full text-center h-12 flex items-center justify-center;
+  .radio-btn {
+    @apply bg-very-dark-cyan text-white hover:bg-strong-cyan cursor-pointer rounded w-full text-center h-12 flex items-center justify-center;
 
-        input {
-            @apply appearance-none;
-        }
-
-        label {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    input {
+      @apply appearance-none;
     }
 
-    .checked {
-        @apply bg-strong-cyan;
+    label {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+  }
+
+  .checked {
+    @apply bg-strong-cyan;
+  }
 }

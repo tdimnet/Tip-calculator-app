@@ -1,11 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./index.html"
-  ],
+  content: ["./index.html"],
   theme: {
     fontFamily: {
-      ["space-mono"]: ["Space Mono", "monospace"]
+      ["space-mono"]: ["Space Mono", "monospace"],
     },
     colors: {
       "strong-cyan": "hsl(172, 67%, 45%)",
@@ -14,9 +12,8 @@ module.exports = {
       "grayish-cyan": "hsl(184, 14%, 56%)",
       "light-grayish-cyan": "hsl(185, 41%, 84%)",
       "very-light-grayish-cyan": "hsl(189, 41%, 97%)",
-      "white": "hsl(0, 0%, 100%)"
-    }
+      white: "hsl(0, 0%, 100%)",
+    },
   },
   plugins: [],
-}
-
+};
