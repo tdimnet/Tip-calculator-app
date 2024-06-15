@@ -38,8 +38,11 @@ jobs:
       - name: Checking if dist folder has been created
         run: ls dist
 
+      - name: Copying images to dist folder
+        run: cp -R images dist/images
+
       - name: Copying index.html to dist folder
-        run: cp index.html dist
+        run: cp index-copy.html dist
 
       - name: Setting up GH Pages
         uses: actions/configure-pages@v3
