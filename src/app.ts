@@ -52,10 +52,10 @@ $formTip?.addEventListener("input", function (e) {
 
     (
       document.querySelector(".tip-per-person") as HTMLParagraphElement
-    ).textContent = tipAmountPerPerson.toFixed(2);
+    ).textContent = String(tipAmountPerPerson);
     (
       document.querySelector(".total-per-person") as HTMLParagraphElement
-    ).textContent = totalPerPerson.toFixed(2);
+    ).textContent = String(totalPerPerson);
   }
 });
 

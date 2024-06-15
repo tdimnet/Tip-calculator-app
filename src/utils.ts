@@ -11,8 +11,8 @@ function handleFullBill(
   const totalBill = Number((bill * (1 + tip)).toFixed(2));
 
   return {
-    tipAmountPerPerson: tipAmount / numberOfPeople,
-    totalPerPerson: totalBill / numberOfPeople,
+    tipAmountPerPerson: Number((tipAmount / numberOfPeople).toPrecision(3)),
+    totalPerPerson: Number((totalBill / numberOfPeople).toPrecision(3)),
   };
 }
 
