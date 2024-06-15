@@ -5,23 +5,38 @@ const $formTip = document.querySelector(".form-tip");
 function handleRadioButtons(selectedRadio: Element) {
   const radioButtons = document.querySelectorAll(".radio-btn");
   radioButtons.forEach((radioBtn) => radioBtn.classList.remove("checked"));
+
+  // Reseting to default custom element
+  const customTip = document.querySelector(
+    'input[data-type="custom"]',
+  ) as HTMLInputElement;
+  customTip.setAttribute("type", "radio");
+  customTip.classList.remove("custom-text-input");
+
   selectedRadio.parentElement.classList.add("checked");
 }
 
-function handleTip(tipElement: string): number {
-  console.log("Let's update the tip", tipElement);
-  return Number(tipElement) / 100;
+function handleTip(tip: string): number {
+  return Number(tip) / 100;
 }
 
-function onUpdateCustomType() {
-  const customType = document.querySelector('input[data-type="custom"]') as HTMLInputElement;
+function onUpdateCustomTip(tip: string): number | undefined {
+  // Unchecking all radio buttons
+  const radioButtons = document.querySelectorAll(".radio-btn");
+  radioButtons.forEach((radioBtn) => radioBtn.classList.remove("checked"));
 
-  customType.setAttribute("type", "text");
-  customType.classList.add('custom-text-input')
+  const customTip = document.querySelector(
+    'input[data-type="custom"]',
+  ) as HTMLInputElement;
 
-  console.log("======");
-  console.log(customType);
-  console.log("======");
+  customTip.setAttribute("type", "number");
+  customTip.setAttribute("min", "0");
+  customTip.setAttribute("max", "100");
+  customTip.classList.add("custom-text-input");
+
+  if (Number(tip)) {
+    return Number(customTip.value) / 100;
+  }
 }
 
 $formTip?.addEventListener("input", function (e) {
@@ -34,7 +49,9 @@ $formTip?.addEventListener("input", function (e) {
     handleRadioButtons(targetElement);
     tip = handleTip(targetElement.value);
   } else if (dataType === "custom") {
-    onUpdateCustomType();
+    tip = onUpdateCustomTip(targetElement.value)
+      ? onUpdateCustomTip(targetElement.value)
+      : tip;
   }
 
   const bill = Number(
