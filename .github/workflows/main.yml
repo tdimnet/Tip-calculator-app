@@ -36,5 +36,5 @@ jobs:
         run: npm run css:build
 
       - name: Checking if dist folder has been created
-        run: ls && ls dist
+        run: ls dist
 
