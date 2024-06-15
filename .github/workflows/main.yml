@@ -30,11 +30,11 @@ jobs:
         run: npm run test
 
       - name: Building JS from TS files
-        name: npm run ts:build
+        run: npm run ts:build
 
       - name: Building CSS from Tailwind
-        name: npm run css:build
+        run: npm run css:build
 
       - name: Checking if dist folder has been created
-        name: ls && ls dist
+        run: ls && ls dist
 
