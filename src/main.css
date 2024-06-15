@@ -19,6 +19,10 @@
     }
   }
 
+  .custom-text-input {
+    @apply absolute h-full w-full text-very-dark-cyan bg-very-light-grayish-cyan text-right pr-2;
+  }
+
   .checked {
     @apply bg-strong-cyan;
   }

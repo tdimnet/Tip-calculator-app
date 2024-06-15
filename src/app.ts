@@ -14,9 +14,10 @@ function handleTip(tipElement: string): number {
 }
 
 function onUpdateCustomType() {
-  const customType = document.querySelector('input[data-type="custom"]');
+  const customType = document.querySelector('input[data-type="custom"]') as HTMLInputElement;
 
   customType.setAttribute("type", "text");
+  customType.classList.add('custom-text-input')
 
   console.log("======");
   console.log(customType);
