@@ -15,12 +15,12 @@
     <link rel="stylesheet" href="/dist/main.css" />
   </head>
   <body class="font-space-mono">
-    <main class="bg-light-grayish-cyan pt-12 md:pb-12">
+    <main class="bg-light-grayish-cyan px-4 pt-12 md:pb-12 md:min-h-screen md:flex md:flex-col justify-center">
       <h1 class="flex justify-center mb-10">
         <img src="./images/logo.svg" alt="Splitter" />
       </h1>
       <form
-        class="form-tip bg-white p-8 rounded-tl-3xl rounded-tr-3xl max-w-screen-lg mx-auto md:flex md:gap-12"
+        class="form-tip bg-white p-8 rounded-tl-3xl rounded-tr-3xl max-w-screen-lg mx-auto md:flex md:gap-12 md:rounded-3xl md:w-full"
       >
         <div class="md:w-2/4">
           <fieldset class="mb-8 relative">
@@ -45,7 +45,7 @@
           </fieldset>
           <fieldset class="mb-4">
             <legend class="mb-4">Select Tip %</legend>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
               <div class="radio-btn">
                 <input
                   checked
@@ -133,7 +133,7 @@
           </fieldset>
         </div>
 
-        <div class="bg-very-dark-cyan text-white pt-9 px-6 pb-6 md:w-2/4">
+        <div class="bg-very-dark-cyan text-white pt-9 px-6 pb-6 md:w-2/4 md:flex md:flex-col">
           <div class="flex mb-5">
             <p>
               Tip Amout
@@ -155,7 +155,7 @@
             </p>
           </div>
           <button
-            class="bg-strong-cyan w-full py-3 text-very-dark-cyan uppercase rounded"
+            class="bg-strong-cyan w-full py-3 text-very-dark-cyan uppercase rounded md:mt-auto"
             type="reset"
           >
             reset
